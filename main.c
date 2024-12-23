@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int main () {
+int main (int ac, char **av) {
 
     size_t n = 0;
     char *cadena = NULL;
@@ -14,7 +14,8 @@ int main () {
         if (leer_linea == -1) {
             printf("error en getline");
         }
-        printf("este es el buff %s \n este es el size %ld \n", cadena, n);
+        get_environ();
         free(cadena);
     }
+    free(cadena);
 }
